@@ -1,7 +1,7 @@
 package com.api.foursquare.di.components;
 
 
-import com.api.foursquare.VenuesActivity;
+import com.api.foursquare.ui.venues.VenuesActivity;
 import com.api.foursquare.di.modules.VenuesModule;
 import com.api.foursquare.di.scopes.ActivityScope;
 

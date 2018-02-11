@@ -1,4 +1,4 @@
-package com.api.foursquare.ui.venues;
+package com.api.foursquare.ui.venues.view;
 
 import com.api.foursquare.network.models.Venue;
 import com.api.foursquare.ui.MvpView;

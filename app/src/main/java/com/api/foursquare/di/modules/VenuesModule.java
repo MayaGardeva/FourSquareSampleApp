@@ -1,8 +1,8 @@
 package com.api.foursquare.di.modules;
 
-import com.api.foursquare.VenuesActivity;
+import com.api.foursquare.ui.venues.VenuesActivity;
 import com.api.foursquare.di.scopes.ActivityScope;
-import com.api.foursquare.ui.venues.VenuesView;
+import com.api.foursquare.ui.venues.view.VenuesView;
 
 import dagger.Module;
 import dagger.Provides;

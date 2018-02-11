@@ -1,4 +1,4 @@
-package com.api.foursquare;
+package com.api.foursquare.ui.venues;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -6,6 +6,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.api.foursquare.R;
 import com.api.foursquare.ui.custom_views.EndlessRecyclerView;
 import com.miguelcatalan.materialsearchview.MaterialSearchView;
 

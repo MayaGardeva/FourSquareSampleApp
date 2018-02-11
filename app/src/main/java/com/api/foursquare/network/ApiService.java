@@ -1,6 +1,6 @@
 package com.api.foursquare.network;
 
-import com.api.foursquare.network.models.VenueResponse;
+import com.api.foursquare.network.models.VenuesResponse;
 
 import io.reactivex.Observable;
 import retrofit2.http.GET;
@@ -13,5 +13,5 @@ import retrofit2.http.Query;
 public interface ApiService {
 
     @GET("/v2/venues/explore")
-    Observable<VenueResponse> getRecommendedVenues(@Query("near") String near);
+    Observable<VenuesResponse> getRecommendedVenuesNear(@Query("near") String near);
 }

@@ -13,5 +13,5 @@ import retrofit2.http.Query;
 public interface ApiService {
 
     @GET("/v2/venues/explore")
-    Observable<VenuesResponse> getRecommendedVenuesNear(@Query("near") String near);
+    Observable<VenuesResponse> getRecommendedVenuesNear(@Query("near") String near, @Query("offset") int offset);
 }

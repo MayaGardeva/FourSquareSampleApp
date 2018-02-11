@@ -10,5 +10,5 @@ import io.reactivex.Observable;
  */
 
 public interface VenuesRepository {
-    Observable<VenuesResponse> getVenuesNear(final String locationName);
+    Observable<VenuesResponse> getVenuesNear(final String locationName, int offset);
 }

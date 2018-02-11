@@ -9,7 +9,7 @@ import com.api.foursquare.ui.venues.view.VenuesView;
 
 public interface VenuesPresenter extends MvpPresenter {
 
-    void getVenuesNear(final String locationName);
+    void getVenuesNear(final String locationName, int offset);
 
     void setVenuesView(VenuesView venuesView);
 }

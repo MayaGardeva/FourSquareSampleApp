@@ -31,19 +31,19 @@ public class VenuesPresenterImpl implements VenuesPresenter {
         this.context = context;
     }
 
-    @Override public void getVenuesNear(final String locationName) {
+    @Override public void getVenuesNear(final String locationName, int offset) {
         if (hasDataConnection()) {
-            loadMoviesFromNetwork(locationName);
+            loadMoviesFromNetwork(locationName, offset);
         } else {
             onNoDataConnection();
         }
     }
 
-    private void loadMoviesFromNetwork(final String locationName) {
+    private void loadMoviesFromNetwork(final String locationName, int offset) {
         if (isViewAttached()) {
             venuesView.showProgressBar();
         }
-        subscription = repository.getVenuesNear(locationName)
+        subscription = repository.getVenuesNear(locationName, offset)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::onVenuesSuccess, this::onVenuesFailure);

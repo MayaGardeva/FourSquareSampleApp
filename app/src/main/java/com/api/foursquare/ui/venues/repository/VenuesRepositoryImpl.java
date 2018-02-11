@@ -20,7 +20,7 @@ public class VenuesRepositoryImpl implements VenuesRepository {
         this.apiService = apiService;
     }
 
-    @Override public Observable<VenuesResponse> getVenuesNear(final String locationName) {
-        return apiService.getRecommendedVenuesNear(locationName);
+    @Override public Observable<VenuesResponse> getVenuesNear(final String locationName, int offset) {
+        return apiService.getRecommendedVenuesNear(locationName, offset);
     }
 }

@@ -14,6 +14,8 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.api.foursquare.R;
+import com.api.foursquare.VenuesApplication;
+import com.api.foursquare.di.modules.VenuesModule;
 import com.api.foursquare.network.models.Venue;
 import com.api.foursquare.ui.custom_views.EndlessRecyclerView;
 import com.api.foursquare.ui.venues.presenter.VenuesPresenter;
@@ -53,18 +55,14 @@ public class VenuesActivity extends AppCompatActivity implements VenuesView {
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
+        injectDependencies();
         setupVenuesRecyclerView();
         setupSearchView();
         loadDefaultVenues();
     }
 
-    @Override public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-
-        MenuItem item = menu.findItem(R.id.action_search);
-        searchView.setMenuItem(item);
-
-        return true;
+    private void injectDependencies() {
+        ((VenuesApplication) this.getApplication()).getApplicationComponent().plus(new VenuesModule(this, this)).inject(this);
     }
 
     private void setupVenuesRecyclerView() {
@@ -106,6 +104,15 @@ public class VenuesActivity extends AppCompatActivity implements VenuesView {
         venuesPresenter.setVenuesView(this);
         venuesPresenter.getVenuesNear(inputValue, currentPageNumber);
         currentPageNumber++;
+    }
+
+    @Override public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.menu_main, menu);
+
+        MenuItem item = menu.findItem(R.id.action_search);
+        searchView.setMenuItem(item);
+
+        return true;
     }
 
     @Override protected void onDestroy() {

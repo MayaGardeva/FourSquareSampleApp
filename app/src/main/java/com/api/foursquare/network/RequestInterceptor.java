@@ -3,6 +3,7 @@ package com.api.foursquare.network;
 import android.support.annotation.NonNull;
 
 import com.api.foursquare.BuildConfig;
+import com.api.foursquare.utility.DateUtility;
 
 import java.io.IOException;
 
@@ -27,6 +28,8 @@ public class RequestInterceptor implements Interceptor {
 
     @Override public Response intercept(@NonNull Chain chain) throws IOException {
 
+        final String currentDate = DateUtility.getCurrentDateAsString();
+
         Request original = chain.request();
         HttpUrl originalHttpUrl = original.url();
 
@@ -34,6 +37,7 @@ public class RequestInterceptor implements Interceptor {
                 .addQueryParameter("client_id", BuildConfig.FOURSQUARE_CLIENT_ID)
                 .addQueryParameter("client_secret", BuildConfig.FOURSQUARE_CLIENT_SECRET)
                 .addQueryParameter("limit", MAX_NUMBER_OF_ITEMS_PER_REQUEST)
+                .addQueryParameter("v", currentDate)
                 .build();
 
         Request request = original.newBuilder().url(url).build();

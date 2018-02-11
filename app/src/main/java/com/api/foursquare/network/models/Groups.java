@@ -6,12 +6,12 @@ import com.google.gson.annotations.SerializedName;
  * Created by mayagardeva on 11/02/2018.
  */
 
-public class VenuesResponse {
+public class Groups {
 
-    @SerializedName("response")
-    private Response response;
+    @SerializedName("items")
+    private Items[] items;
 
-    public Response getResponse() {
-        return response;
+    public Items[] getItems() {
+        return items;
     }
 }

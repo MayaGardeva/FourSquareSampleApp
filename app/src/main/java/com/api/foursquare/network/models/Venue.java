@@ -11,9 +11,50 @@ public class Venue {
     @SerializedName("name")
     private String name;
 
+    @SerializedName("id")
+    private String id;
+
+    @SerializedName("location")
+    private Location location;
+
+    @SerializedName("hours")
+    private Hours hours;
+
+    @SerializedName("categories")
+    private Categories[] categories;
+
+    @SerializedName("rating")
+    private String rating;
+
+    @SerializedName("url")
+    private String url;
 
     public String getName() {
         return name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public Hours getHours() {
+        return hours;
+    }
+
+    public Categories[] getCategories() {
+        return categories;
+    }
+
+    public String getRating() {
+        return rating;
+    }
+
+    public String getUrl() {
+        return url;
     }
 
     //todo replace with real data

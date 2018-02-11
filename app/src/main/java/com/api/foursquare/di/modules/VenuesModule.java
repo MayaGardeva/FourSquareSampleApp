@@ -1,7 +1,14 @@
 package com.api.foursquare.di.modules;
 
-import com.api.foursquare.ui.venues.VenuesActivity;
+import android.support.v7.widget.LinearLayoutManager;
+
 import com.api.foursquare.di.scopes.ActivityScope;
+import com.api.foursquare.ui.venues.VenuesActivity;
+import com.api.foursquare.ui.venues.VenuesAdapter;
+import com.api.foursquare.ui.venues.presenter.VenuesPresenter;
+import com.api.foursquare.ui.venues.presenter.VenuesPresenterImpl;
+import com.api.foursquare.ui.venues.repository.VenuesRepository;
+import com.api.foursquare.ui.venues.repository.VenuesRepositoryImpl;
 import com.api.foursquare.ui.venues.view.VenuesView;
 
 import dagger.Module;
@@ -23,15 +30,33 @@ public class VenuesModule {
     }
 
     @Provides
-    @ActivityScope
-    VenuesActivity provideActivity() {
+    @ActivityScope VenuesActivity provideActivity() {
         return activity;
     }
 
     @Provides
-    @ActivityScope
-    VenuesView provideView() {
+    @ActivityScope VenuesView provideView() {
         return view;
+    }
+
+    @Provides
+    @ActivityScope VenuesRepository provideRepository(VenuesRepositoryImpl repository) {
+        return repository;
+    }
+
+    @Provides
+    @ActivityScope VenuesPresenter providePresenter(VenuesPresenterImpl presenter) {
+        return presenter;
+    }
+
+    @Provides
+    @ActivityScope VenuesAdapter provideAlbumListAdapter(VenuesActivity venuesActivity) {
+        return new VenuesAdapter(venuesActivity);
+    }
+
+    @Provides
+    @ActivityScope LinearLayoutManager provideLinearLayoutManager(VenuesActivity venuesActivity) {
+        return new LinearLayoutManager(venuesActivity);
     }
 
 }

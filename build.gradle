@@ -31,4 +31,5 @@ ext {
     dagger2Version = '2.5'
     retrofit2 = '2.3.0'
     butterknife = '8.8.1'
+    powerMockito = '1.7.0'
 }

@@ -23,4 +23,9 @@
         <item name="android:textSize">@dimen/text_size_big</item>
     </style>
 
+    <style name="TextView.Small" parent="TextView">
+        <item name="android:textSize">@dimen/text_size_small</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
 </resources>

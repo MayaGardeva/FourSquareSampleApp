@@ -2,6 +2,7 @@ package com.api.foursquare.ui.venues;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 
@@ -34,10 +35,11 @@ public class VenuesAdapter extends RecyclerView.Adapter<VenuesViewHolder> {
 
     @Override public void onBindViewHolder(VenuesViewHolder holder, final int position) {
         final Venue venue = venues.get(position);
-
+        
         holder.getVenueTitleView().setText(venue.getName());
         holder.getVenueTypeView().setText(venue.getType());
-        holder.getVenueAddressView().setText(venue.getAddress());
+        holder.getVenueAddressView().setText(Html.fromHtml(venue.getAddress()));
+        holder.getVenueStatusView().setText(venue.getHoursStatus());
         setPosterImage(holder, venue.getImageUrl());
     }
 

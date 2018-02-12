@@ -146,7 +146,7 @@ public class VenuesActivity extends AppCompatActivity implements VenuesView {
     }
 
     public void onVenueItemClicked(Venue venue) {
-       //todo
+        showSnackBar(venue.getName());
     }
 
     @Override public void showProgressBar() {

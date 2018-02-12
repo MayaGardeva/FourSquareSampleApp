@@ -31,19 +31,19 @@ public class VenuesPresenterImpl implements VenuesPresenter {
         this.context = context;
     }
 
-    @Override public void getVenuesNear(final String locationName, int offset) {
+    @Override public void getVenuesNear(final String locationName, int page) {
         if (hasDataConnection()) {
-            loadMoviesFromNetwork(locationName, offset);
+            loadMoviesFromNetwork(locationName, page);
         } else {
             onNoDataConnection();
         }
     }
 
-    private void loadMoviesFromNetwork(final String locationName, int offset) {
+    private void loadMoviesFromNetwork(final String locationName, int page) {
         if (isViewAttached()) {
             venuesView.showProgressBar();
         }
-        subscription = repository.getVenuesNear(locationName, offset)
+        subscription = repository.getVenuesNear(locationName, page)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(this::onVenuesSuccess, this::onVenuesFailure);
@@ -66,7 +66,7 @@ public class VenuesPresenterImpl implements VenuesPresenter {
         if (isViewAttached()) {
             venuesView.hideProgressBar();
             if (venuesResponse != null) {
-                venuesView.showVenues(null); //TODO
+                venuesView.showVenues(venuesResponse.getVenues());
             }
         }
     }

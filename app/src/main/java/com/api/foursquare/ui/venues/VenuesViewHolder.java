@@ -20,6 +20,8 @@ public class VenuesViewHolder extends RecyclerView.ViewHolder {
     @BindView(R.id.item_venue_title) TextView venueTitleView;
     @BindView(R.id.item_venue_type) TextView venueTypeView;
     @BindView(R.id.item_venue_address) TextView venueAddressView;
+    @BindView(R.id.item_venue_status) TextView venueStatusView;
+    @BindView(R.id.item_venue_opened_now) TextView venueOpenedNowView;
 
     public VenuesViewHolder(View itemView) {
         super(itemView);
@@ -39,4 +41,8 @@ public class VenuesViewHolder extends RecyclerView.ViewHolder {
     }
 
     public TextView getVenueAddressView() { return venueAddressView;}
+
+    public TextView getVenueStatusView() { return  venueStatusView; }
+
+    public TextView getVenueOpenedNowView() { return  venueOpenedNowView; }
 }

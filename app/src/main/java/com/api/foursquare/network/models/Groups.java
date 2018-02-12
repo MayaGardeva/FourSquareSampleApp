@@ -14,4 +14,8 @@ public class Groups {
     public Items[] getItems() {
         return items;
     }
+
+    public boolean isValidResponse() {
+        return items != null && items.length > 0 && items[0].isValidResponse();
+    }
 }

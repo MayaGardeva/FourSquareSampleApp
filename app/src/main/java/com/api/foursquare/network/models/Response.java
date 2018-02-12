@@ -43,4 +43,7 @@ public class Response {
         return groups;
     }
 
+    public boolean isValidResponse() {
+        return  (groups != null && groups.length > 0 && groups[0].isValidResponse());
+    }
 }

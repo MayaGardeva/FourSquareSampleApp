@@ -2,6 +2,7 @@ package com.api.foursquare.ui.venues.repository;
 
 
 import com.api.foursquare.network.ApiService;
+import com.api.foursquare.network.RequestInterceptor;
 import com.api.foursquare.network.models.VenuesResponse;
 
 import javax.inject.Inject;
@@ -20,7 +21,7 @@ public class VenuesRepositoryImpl implements VenuesRepository {
         this.apiService = apiService;
     }
 
-    @Override public Observable<VenuesResponse> getVenuesNear(final String locationName, int offset) {
-        return apiService.getRecommendedVenuesNear(locationName, offset);
+    @Override public Observable<VenuesResponse> getVenuesNear(final String locationName, int page) {
+        return apiService.getRecommendedVenuesNear(locationName, RequestInterceptor.MAX_NUMBER_OF_ITEMS_PER_REQUEST * page);
     }
 }

@@ -23,18 +23,33 @@
         <TextView
             android:id="@+id/item_venue_title"
             style="@style/TextView.Title"
-            android:paddingBottom="@dimen/padding_small"
+            android:paddingBottom="@dimen/padding_default"
             tools:text="Title" />
 
         <TextView
             android:id="@+id/item_venue_type"
             style="@style/TextView"
             android:paddingBottom="@dimen/padding_small"
+            android:textStyle="bold"
             tools:text="Coffee shop" />
 
         <TextView
-            android:id="@+id/item_venue_address"
+            android:id="@+id/item_venue_opened_now"
             style="@style/TextView"
+            android:paddingBottom="@dimen/padding_small"
+            tools:text="Opened now"
+            android:visibility="gone"/>
+
+        <TextView
+            android:id="@+id/item_venue_status"
+            style="@style/TextView"
+            android:paddingBottom="@dimen/padding_small"
+            tools:text="Status" />
+
+        <TextView
+            android:id="@+id/item_venue_address"
+            style="@style/TextView.Small"
+            android:paddingBottom="@dimen/padding_small"
             tools:text="Address" />
 
     </LinearLayout>

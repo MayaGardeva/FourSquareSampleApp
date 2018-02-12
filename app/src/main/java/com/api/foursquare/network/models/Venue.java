@@ -29,6 +29,8 @@ public class Venue {
     @SerializedName("url")
     private String url;
 
+    private String imageUrl;
+
     public String getName() {
         return name;
     }
@@ -57,16 +59,41 @@ public class Venue {
         return url;
     }
 
-    //todo replace with real data
     public String getType() {
-        return "Coffee shop";
+        if (categories != null && categories.length > 0) {
+            return categories[0].getName();
+        } else {
+            return "***No data available***";
+        }
     }
 
     public String getAddress() {
-        return "B/T W. Broadway & Thompson";
+        StringBuilder locationStr = new StringBuilder();
+        if (location != null) {
+            for (String line: location.getFormattedAddress()) {
+                locationStr.append(line).append("<br/>");
+            }
+        }
+        return locationStr.toString();
     }
 
     public String getImageUrl() {
-        return "https://ss3.4sqi.net/img/categories_v2/food/coffeeshop_.png";
+        return imageUrl;
+    }
+
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
+    }
+
+    public boolean isOpenNow() {
+        return hours == null || hours.getIsOpen();
+    }
+
+    public String getHoursStatus() {
+        if (hours != null) {
+            return hours.getStatus();
+        } else {
+            return "";
+        }
     }
 }

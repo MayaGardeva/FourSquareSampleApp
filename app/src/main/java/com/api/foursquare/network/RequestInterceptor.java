@@ -22,7 +22,7 @@ import okhttp3.Response;
 @Singleton
 public class RequestInterceptor implements Interceptor {
 
-    private static final String MAX_NUMBER_OF_ITEMS_PER_REQUEST = "20";
+    public static final int MAX_NUMBER_OF_ITEMS_PER_REQUEST = 20;
 
     @Inject public RequestInterceptor() {}
 
@@ -36,7 +36,7 @@ public class RequestInterceptor implements Interceptor {
         HttpUrl url = originalHttpUrl.newBuilder()
                 .addQueryParameter("client_id", BuildConfig.FOURSQUARE_CLIENT_ID)
                 .addQueryParameter("client_secret", BuildConfig.FOURSQUARE_CLIENT_SECRET)
-                .addQueryParameter("limit", MAX_NUMBER_OF_ITEMS_PER_REQUEST)
+                .addQueryParameter("limit", Integer.toString(MAX_NUMBER_OF_ITEMS_PER_REQUEST))
                 .addQueryParameter("v", currentDate)
                 .build();
 

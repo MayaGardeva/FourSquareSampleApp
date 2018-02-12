@@ -15,7 +15,7 @@ public class Hours {
     private String status;
 
     @SerializedName("isOpen")
-    private String isOpen;
+    private boolean isOpen;
 
     public String getIsLocalHoliday() {
         return isLocalHoliday;
@@ -25,7 +25,7 @@ public class Hours {
         return status;
     }
 
-    public String getIsOpen() {
+    public boolean getIsOpen() {
         return isOpen;
     }
 }

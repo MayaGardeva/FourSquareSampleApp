@@ -57,7 +57,7 @@ public class EndlessRecyclerView extends RecyclerView {
     }
 
     public abstract class AdvancedEndlessRecyclerOnScrollListener extends OnScrollListener {
-        private int visibleThreshold = 3;
+        private int visibleThreshold = 2;
         private int lastVisibleItem, totalItemCount;
         private boolean loading;
         private LayoutManager linearLayoutManager;

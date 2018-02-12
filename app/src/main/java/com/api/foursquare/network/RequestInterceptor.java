@@ -38,6 +38,8 @@ public class RequestInterceptor implements Interceptor {
                 .addQueryParameter("client_secret", BuildConfig.FOURSQUARE_CLIENT_SECRET)
                 .addQueryParameter("limit", Integer.toString(MAX_NUMBER_OF_ITEMS_PER_REQUEST))
                 .addQueryParameter("v", currentDate)
+                .addQueryParameter("venuePhotos", "1")
+                .addQueryParameter("m", "foursquare")
                 .build();
 
         Request request = original.newBuilder().url(url).build();

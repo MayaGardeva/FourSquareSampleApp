@@ -45,13 +45,13 @@ public class VenuesActivity extends AppCompatActivity implements VenuesView {
     @BindView(R.id.progress_bar) ProgressBar progressBar;
 
     private final static String DEFAULT_SEARCH_VALUE = "Holborn";
-    private final static int DEFAULT_PAGE_NUMBER = 1;
+    private final static int DEFAULT_PAGE_NUMBER = 0;
     private int currentPageNumber = DEFAULT_PAGE_NUMBER;
     private String inputValue = DEFAULT_SEARCH_VALUE;
 
     @Override protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_venue_recommendations);
+        setContentView(R.layout.activity_venues);
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 

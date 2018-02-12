@@ -28,7 +28,7 @@ public class VenuesResponse {
             Items[] items = response.getGroups()[0].getItems();
             for (Items item : items) {
                 Venue venue = item.getVenue();
-                venue.setImageUrl(getImageUrl(item.getTips()));
+                //venue.setImageUrl(getImageUrl(item.getTips()));
                 venues.add(venue);
             }
         }

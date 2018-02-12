@@ -1,11 +1,9 @@
 <resources>
     <string name="app_name">FourSquare</string>
-    <string name="title_activity_maps_detail">Map</string>
-    <string name="toolbar_title">Premier</string>
     <string name="error_not_connected_to_the_internet">Looks like your phone doesn\'t have a signal. Please try again later.</string>
     <string name="generic_error">Looks like there is an error. Please try again later.</string>
     <string name="default_venues_title">Venues near Holborn</string>
     <string name="search">Search for venue</string>
-    <string name="opened_now">Opened now</string>
-    <string name="closed">Closed</string>
+    <string name="rating">Rating: %1$s/10</string>
+    <string name="venue_poster">venue poster</string>
 </resources>

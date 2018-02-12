@@ -1,57 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
-
-    <ImageView
-        android:id="@+id/item_venue_poster"
-        android:layout_width="@dimen/poster_width"
-        android:layout_height="@dimen/poster_height"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:padding="@dimen/padding_default"/>
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/padding_default">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_toRightOf="@+id/item_venue_poster"
-        android:layout_toEndOf="@+id/item_venue_poster"
-        android:padding="@dimen/padding_default">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/item_venue_title"
-            style="@style/TextView.Title"
-            android:paddingBottom="@dimen/padding_default"
-            tools:text="Title" />
+        <ImageView
+            android:id="@+id/item_venue_poster"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:padding="@dimen/padding_default"
+            android:scaleType="centerCrop"
+            android:contentDescription="@string/venue_poster" />
 
-        <TextView
-            android:id="@+id/item_venue_type"
-            style="@style/TextView"
-            android:paddingBottom="@dimen/padding_small"
-            android:textStyle="bold"
-            tools:text="Coffee shop" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
 
-        <TextView
-            android:id="@+id/item_venue_opened_now"
-            style="@style/TextView"
-            android:paddingBottom="@dimen/padding_small"
-            tools:text="Opened now"
-            android:visibility="gone"/>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_weight="1">
 
-        <TextView
-            android:id="@+id/item_venue_status"
-            style="@style/TextView"
-            android:paddingBottom="@dimen/padding_small"
-            tools:text="Status" />
+                <TextView
+                    android:id="@+id/item_venue_title"
+                    style="@style/TextView.Title"
+                    android:padding="@dimen/padding_default"
+                    tools:text="Title" />
 
-        <TextView
-            android:id="@+id/item_venue_address"
-            style="@style/TextView.Small"
-            android:paddingBottom="@dimen/padding_small"
-            tools:text="Address" />
+                <TextView
+                    android:id="@+id/item_venue_type"
+                    style="@style/TextView"
+                    android:paddingBottom="@dimen/padding_small"
+                    android:paddingLeft="@dimen/padding_default"
+                    android:textStyle="bold"
+                    tools:text="Coffee shop" />
+
+                <TextView
+                    android:id="@+id/item_venue_rating"
+                    style="@style/TextView.Medium"
+                    android:paddingBottom="@dimen/padding_small"
+                    android:paddingLeft="@dimen/padding_default"
+                    tools:text="Rating 8.8/10" />
+
+                <TextView
+                    android:id="@+id/item_venue_status"
+                    style="@style/TextView.Medium"
+                    android:paddingBottom="@dimen/padding_small"
+                    android:paddingLeft="@dimen/padding_default"
+                    tools:text="Status" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/item_venue_address"
+                    style="@style/TextView.Medium"
+                    android:padding="@dimen/padding_default"
+                    tools:text="Address" />
+            </LinearLayout>
+        </LinearLayout>
 
     </LinearLayout>
-
-</RelativeLayout>
+</android.support.v7.widget.CardView>

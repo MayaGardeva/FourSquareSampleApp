@@ -40,6 +40,7 @@ public class VenuesAdapter extends RecyclerView.Adapter<VenuesViewHolder> {
         holder.getVenueTypeView().setText(venue.getType());
         holder.getVenueAddressView().setText(Html.fromHtml(venue.getAddress()));
         holder.getVenueStatusView().setText(venue.getHoursStatus());
+        holder.getVenueRatingView().setText(holder.itemView.getContext().getString(R.string.rating, venue.getRating()));
         setPosterImage(holder, venue.getImageUrl());
     }
 

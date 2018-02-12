@@ -2,7 +2,8 @@
     <dimen name="padding_small">2dp</dimen>
     <dimen name="padding_default">10dp</dimen>
 
-    <dimen name="text_size_small">12sp</dimen>
+    <dimen name="text_size_small">10sp</dimen>
+    <dimen name="text_size_medium">12sp</dimen>
     <dimen name="text_size_default">14sp</dimen>
     <dimen name="text_size_big">18sp</dimen>
 

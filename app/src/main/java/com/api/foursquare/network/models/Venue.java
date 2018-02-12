@@ -29,6 +29,13 @@ public class Venue {
     @SerializedName("url")
     private String url;
 
+    @SerializedName("photos")
+    private Photos photos;
+
+    public Photos getPhotos() {
+        return photos;
+    }
+
     private String imageUrl;
 
     public String getName() {
@@ -70,7 +77,7 @@ public class Venue {
     public String getAddress() {
         StringBuilder locationStr = new StringBuilder();
         if (location != null) {
-            for (String line: location.getFormattedAddress()) {
+            for (String line : location.getFormattedAddress()) {
                 locationStr.append(line).append("<br/>");
             }
         }
@@ -78,7 +85,21 @@ public class Venue {
     }
 
     public String getImageUrl() {
-        return imageUrl;
+        if (photos != null) {
+            PhotoGroups[] photoGroups = photos.getGroups();
+            if (photoGroups != null && photoGroups.length > 0) {
+                PhotoGroups photoGroup = photoGroups[0];
+                PhotoItems[] photoItems = photoGroup.getItems();
+                if (photoItems != null && photoItems.length > 0) {
+                    PhotoItems photoItem = photoItems[0];
+                    if (photoItem != null && photoItem.getUrl() != null) {
+                        return photoItem.getUrl();
+                    }
+                }
+            }
+        }
+
+        return "";
     }
 
     public void setImageUrl(String imageUrl) {

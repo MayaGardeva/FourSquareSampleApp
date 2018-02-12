@@ -32,12 +32,6 @@ public class Venue {
     @SerializedName("photos")
     private Photos photos;
 
-    public Photos getPhotos() {
-        return photos;
-    }
-
-    private String imageUrl;
-
     public String getName() {
         return name;
     }
@@ -46,24 +40,8 @@ public class Venue {
         return id;
     }
 
-    public Location getLocation() {
-        return location;
-    }
-
-    public Hours getHours() {
-        return hours;
-    }
-
-    public Categories[] getCategories() {
-        return categories;
-    }
-
     public String getRating() {
         return rating;
-    }
-
-    public String getUrl() {
-        return url;
     }
 
     public String getType() {
@@ -100,14 +78,6 @@ public class Venue {
         }
 
         return "";
-    }
-
-    public void setImageUrl(String imageUrl) {
-        this.imageUrl = imageUrl;
-    }
-
-    public boolean isOpenNow() {
-        return hours == null || hours.getIsOpen();
     }
 
     public String getHoursStatus() {

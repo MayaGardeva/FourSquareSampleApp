@@ -33,13 +33,13 @@ public class VenuesPresenterImpl implements VenuesPresenter {
 
     @Override public void getVenuesNear(final String locationName, int page) {
         if (hasDataConnection()) {
-            loadMoviesFromNetwork(locationName, page);
+            loadVenuesFromNetwork(locationName, page);
         } else {
             onNoDataConnection();
         }
     }
 
-    private void loadMoviesFromNetwork(final String locationName, int page) {
+    private void loadVenuesFromNetwork(final String locationName, int page) {
         if (isViewAttached()) {
             venuesView.showProgressBar();
         }

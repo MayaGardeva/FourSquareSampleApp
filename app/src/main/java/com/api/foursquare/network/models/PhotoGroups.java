@@ -20,14 +20,6 @@ public class PhotoGroups {
     @SerializedName("type")
     private String type;
 
-    public String getCount() {
-        return count;
-    }
-
-    public String getType() {
-        return type;
-    }
-
     public String getName() {
         return name;
     }

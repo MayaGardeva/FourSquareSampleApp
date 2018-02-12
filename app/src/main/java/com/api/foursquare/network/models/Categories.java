@@ -11,9 +11,6 @@ public class Categories {
     @SerializedName("id")
     private String id;
 
-    @SerializedName("icon")
-    private Icon icon;
-
     @SerializedName("primary")
     private String primary;
 
@@ -30,23 +27,7 @@ public class Categories {
         return id;
     }
 
-    public Icon getIcon() {
-        return icon;
-    }
-
-    public String getPrimary() {
-        return primary;
-    }
-
     public String getName() {
         return name;
-    }
-
-    public String getShortName() {
-        return shortName;
-    }
-
-    public String getPluralName() {
-        return pluralName;
     }
 }

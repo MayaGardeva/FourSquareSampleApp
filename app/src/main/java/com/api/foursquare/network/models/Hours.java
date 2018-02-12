@@ -17,15 +17,7 @@ public class Hours {
     @SerializedName("isOpen")
     private boolean isOpen;
 
-    public String getIsLocalHoliday() {
-        return isLocalHoliday;
-    }
-
     public String getStatus() {
         return status;
-    }
-
-    public boolean getIsOpen() {
-        return isOpen;
     }
 }

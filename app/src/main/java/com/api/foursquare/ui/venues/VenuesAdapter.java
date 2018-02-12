@@ -59,7 +59,7 @@ public class VenuesAdapter extends RecyclerView.Adapter<VenuesViewHolder> {
         return venues == null ? 0 : venues.size();
     }
 
-    public void appendAlbums(List<Venue> venues) {
+    public void appendVenues(List<Venue> venues) {
         if (this.venues == null) {
             this.venues = venues;
         } else {

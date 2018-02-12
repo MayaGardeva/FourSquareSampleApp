@@ -14,7 +14,7 @@
         <ImageView
             android:id="@+id/item_venue_poster"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="@dimen/venue_height"
             android:padding="@dimen/padding_default"
             android:scaleType="centerCrop"
             android:contentDescription="@string/venue_poster" />

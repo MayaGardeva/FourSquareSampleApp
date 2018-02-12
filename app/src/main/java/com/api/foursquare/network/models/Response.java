@@ -23,22 +23,6 @@ public class Response {
     @SerializedName("groups")
     private Groups[] groups;
 
-    public String getTotalResults() {
-        return totalResults;
-    }
-
-    public String getQuery() {
-        return query;
-    }
-
-    public String getHeaderLocation() {
-        return headerLocation;
-    }
-
-    public String getHeaderFullLocation() {
-        return headerFullLocation;
-    }
-
     public Groups[] getGroups() {
         return groups;
     }

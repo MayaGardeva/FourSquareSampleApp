@@ -41,47 +41,8 @@ public class Location {
     @SerializedName("crossStreet")
     private String crossStreet;
 
-    public String getCrossStreet() {
-        return crossStreet;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public String getLat() {
-        return lat;
-    }
-
-    public String getCc() {
-        return cc;
-    }
-
-    public String getLng() {
-        return lng;
-    }
-
     public String[] getFormattedAddress() {
         return formattedAddress;
     }
 
-    public String getState() {
-        return state;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public String getPostalCode() {
-        return postalCode;
-    }
-
-    public String getDistance() {
-        return distance;
-    }
 }

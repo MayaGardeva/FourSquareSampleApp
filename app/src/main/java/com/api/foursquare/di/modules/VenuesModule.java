@@ -50,7 +50,7 @@ public class VenuesModule {
     }
 
     @Provides
-    @ActivityScope VenuesAdapter provideAlbumListAdapter(VenuesActivity venuesActivity) {
+    @ActivityScope VenuesAdapter provideVenueListAdapter(VenuesActivity venuesActivity) {
         return new VenuesAdapter(venuesActivity);
     }
 

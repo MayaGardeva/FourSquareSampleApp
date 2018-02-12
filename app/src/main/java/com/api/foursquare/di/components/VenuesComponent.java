@@ -1,9 +1,9 @@
 package com.api.foursquare.di.components;
 
 
-import com.api.foursquare.ui.venues.VenuesActivity;
 import com.api.foursquare.di.modules.VenuesModule;
 import com.api.foursquare.di.scopes.ActivityScope;
+import com.api.foursquare.ui.venues.VenuesActivity;
 
 import dagger.Subcomponent;
 
@@ -13,7 +13,7 @@ import dagger.Subcomponent;
 
 @ActivityScope
 @Subcomponent(modules = {VenuesModule.class})
-public interface MoviesComponent {
+public interface VenuesComponent {
 
     void inject(VenuesActivity activity);
 }

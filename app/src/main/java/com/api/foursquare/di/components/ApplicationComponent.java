@@ -23,5 +23,5 @@ public interface ApplicationComponent {
 
     void inject(VenuesApplication application);
 
-    MoviesComponent plus(VenuesModule venuesModule);
+    VenuesComponent plus(VenuesModule venuesModule);
 }

@@ -19,7 +19,7 @@ public class VenuesResponse {
     }
 
     public boolean isValidResponse() {
-        return  (response != null && response.isValidResponse());
+        return (response != null && response.isValidResponse());
     }
 
     public List<Venue> getVenues() {
@@ -27,22 +27,10 @@ public class VenuesResponse {
         if (isValidResponse()) {
             Items[] items = response.getGroups()[0].getItems();
             for (Items item : items) {
-                Venue venue = item.getVenue();
-                //venue.setImageUrl(getImageUrl(item.getTips()));
-                venues.add(venue);
+                venues.add(item.getVenue());
             }
         }
 
         return venues;
-    }
-
-    private String getImageUrl(Tip[] tips) {
-        if (tips != null && tips.length > 0) {
-            Photo photo = tips[0].getPhoto();
-            if (photo != null) {
-                return photo.getPrefix() + "100x100" + photo.getSuffix();
-            }
-        }
-        return "";
     }
 }

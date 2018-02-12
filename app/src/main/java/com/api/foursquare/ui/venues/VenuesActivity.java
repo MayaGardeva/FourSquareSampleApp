@@ -91,7 +91,7 @@ public class VenuesActivity extends AppCompatActivity implements VenuesView {
         searchView.setOnSearchViewListener(new MaterialSearchView.SearchViewListener() {
             @Override public void onSearchViewShown() {
                 inputValue = "";
-                resetAlbumsListView();
+                resetVenuesListView();
             }
 
             @Override public void onSearchViewClosed() {
@@ -129,20 +129,20 @@ public class VenuesActivity extends AppCompatActivity implements VenuesView {
     }
 
     private void getVenuesForQuery(final String query) {
-        resetAlbumsListView();
+        resetVenuesListView();
         inputValue = query;
         venuesPresenter.getVenuesNear(query, currentPageNumber);
         currentPageNumber++;
     }
 
-    private void resetAlbumsListView() {
+    private void resetVenuesListView() {
         venuesAdapter.clear();
         currentPageNumber = DEFAULT_PAGE_NUMBER;
     }
 
     @Override public void showVenues(List<Venue> venues) {
         recyclerView.setLoading(false);
-        venuesAdapter.appendAlbums(venues);
+        venuesAdapter.appendVenues(venues);
     }
 
     public void onVenueItemClicked(Venue venue) {
